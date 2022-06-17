@@ -2,7 +2,7 @@ import {createClient} from 'contentful'
 import  '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEtsy} from '@fortawesome/free-brands-svg-icons'
-
+import Image from 'next/image'
 export async function getStaticProps() {
  const client = createClient({
    space: '99jhvad3xcxf',
@@ -47,7 +47,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
       <header id="header">
         <div className="d-flex flex-column">
           <div className="profile">
-            <img src="/smirk.jpg" alt="" className="img-fluid rounded-circle"/>
+            <Image src="/smirk.jpg" alt="" className="img-fluid rounded-circle"/>
             <h1 className="text-light"><a href="index.js">Nadya Jackson</a></h1>
             <div className="social-links mt-3 text-center">
               <a href="https://github.com/nadyajackson" className="linkedin"><i className="bi bi-github"></i></a>
@@ -108,7 +108,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
                 <h3 className="resume-title">Education</h3>
                 {edu.items.map(one =>
-                      <div className="resume-item">
+                      <div key={one.fields.what}className="resume-item">
                         <h4>{one.fields.where}</h4>
                         <h5>{one.fields.when}</h5>
                         <p>{one.fields.what}</p>
@@ -118,7 +118,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
               <div className="col-lg-6" >
                 <h3 className="resume-title">Professional Experience</h3>
                 {JobList.items.map(one =>
-                  <div className="resume-item">
+                  <div key={one.fields.title}className="resume-item">
                     <h4>{one.fields.title}</h4>
                     <h5>{one.fields.when}</h5>
                     <p><em>{one.fields.where} </em></p>
@@ -158,7 +158,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-app">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 1"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -168,7 +168,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-web">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -178,7 +178,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-app">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 2"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -188,7 +188,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-card">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -198,7 +198,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-web">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 2"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -208,7 +208,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-app">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -218,7 +218,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-card">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -228,9 +228,9 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-card">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
-                <a href="/for-your-interest.pngassets/img/portfolio/portfolio-8.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 3"><i className="bx bx-plus"></i></a>
+                <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 3"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
               </div>
             </div>
@@ -238,7 +238,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
           <div className="col-lg-4 col-md-6 portfolio-item filter-web">
             <div className="portfolio-wrap">
-              <img src="/for-your-interest.png" className="img-fluid" alt=""/>
+              <Image src="/for-your-interest.png" className="img-fluid" alt=""/>
               <div className="portfolio-links">
                 <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
                 <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
@@ -261,7 +261,7 @@ export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
 
             <div className="grid">
               <div className="col-lg-6" >
-                {(skillsList.items.map( one =><p>{one.fields.skill}</p>))}
+                {(skillsList.items.map( one =><p key={one.fields.skill} >{one.fields.skill}</p>))}
               </div>
             </div>
 
