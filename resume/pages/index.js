@@ -2,11 +2,12 @@ import {createClient} from 'contentful'
 import  '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEtsy} from '@fortawesome/free-brands-svg-icons'
+require('dotenv').config();
 
 export async function getStaticProps() {
  const client = createClient({
-   space: '99jhvad3xcxf',
-   accessToken: 'sn74qrU8fsfEvte-2L8tt8nV4EKO1iPGuu1O-dUX3fo',
+   space: process.env.CONTENTFUL_SPACE_ID,
+   accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
  })
 
  const sum = await client.getEntries({content_type:'professionalSummary'})
