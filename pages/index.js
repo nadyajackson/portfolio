@@ -38,7 +38,7 @@ function on (e) {
 }
 
 
-export default function Home({sum,edu,JobList,portfolio,contact, skillsList}) {
+export default function Home({sum,edu,JobList,contact, skillsList}) {
   
   return (
     <div>
