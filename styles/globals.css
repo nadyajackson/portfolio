@@ -80,7 +80,7 @@ h1, h2, h3, h4, h5, h6 {
   width: 120px !important;
   height: 120px !important;
   border: 8px solid #2c2f3f !important;
-  left:75px !important;
+ 
 }
 #header .profile h1 {
   font-size: 24px;
@@ -368,28 +368,23 @@ section {
 /*--------------------------------------------------------------
 # Skills
 --------------------------------------------------------------*/
-.skills .progress {
-  height: 60px;
-  /* display: block; */
-  background: none;
-  border-radius: 0;
-}
-.skills .progress .skill {
-  padding: 0;
-  margin: 0 0 6px 0;
-  text-transform: uppercase;
-  /* display: block; */
-  font-weight: 600;
-  font-family: "Poppins", sans-serif;
-  color: #050d18;
-}
-.skills .grid .col-lg-6{
-  display: grid;
-  grid-template-columns: auto, auto, auto;
-}
 
-@media (max-width: 768px) {
- 
+@media (min-width: 320px) {
+  .skills .grid .col-lg-6 ul{
+    columns: 2;
+   }
+}
+@media (min-width: 768px) {
+  .skills .grid .col-lg-6 ul{
+    columns: 3;
+   }
+}
+@media (min-width: 1024px) {
+  .skills .grid .col-lg-6 ul{
+   column-gap: 50px;
+   column-width: 140px;
+   padding: 30px
+   }
 }
 /*--------------------------------------------------------------
 # Resume

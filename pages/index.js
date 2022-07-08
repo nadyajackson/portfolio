@@ -3,10 +3,12 @@ import  '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faEtsy} from '@fortawesome/free-brands-svg-icons'
 import Image from 'next/image'
+
+
 export async function getStaticProps() {
  const client = createClient({
-   space: '99jhvad3xcxf',
-   accessToken: 'sn74qrU8fsfEvte-2L8tt8nV4EKO1iPGuu1O-dUX3fo',
+   space: process.env.SPACE_KEY,
+   accessToken: process.env.TOKEN_KEY,
  })
 
  const sum = await client.getEntries({content_type:'professionalSummary'})
@@ -47,7 +49,7 @@ export default function Home({sum,edu,JobList,contact, skillsList}) {
       <header id="header">
         <div className="d-flex flex-column">
           <div className="profile">
-            <Image src="/smirk.jpg"  width= "100%" height="100%" alt="picture of nadya jackson holding a stack of books" className="pImg img-fluid rounded-circle"/>
+            <Image src="/smirk.jpg"  layout='raw' width= "100%" height="100%" alt="picture of nadya jackson holding a stack of books" className="pImg img-fluid rounded-circle"/>
             <h1 className="text-light"><a href="index.js">Nadya Jackson</a></h1>
             <div className="social-links mt-3 text-center">
               <a href="https://github.com/nadyajackson" className="linkedin"><i className="bi bi-github"></i></a>
@@ -143,7 +145,7 @@ export default function Home({sum,edu,JobList,contact, skillsList}) {
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
         </div>
 
-        <div className="row" >
+        {/* <div className="row" >
           <div className="col-lg-12 d-flex justify-content-center">
             <ul id="portfolio-flters">
               <li data-filter="*" className="filter-active">All</li>
@@ -152,7 +154,7 @@ export default function Home({sum,edu,JobList,contact, skillsList}) {
               <li data-filter=".filter-web">Web</li>
             </ul>
           </div>
-        </div>
+        </div> */}
 
         <div className="row portfolio-container" >
 
@@ -186,65 +188,7 @@ export default function Home({sum,edu,JobList,contact, skillsList}) {
             </div>
           </div>
 
-          <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div className="portfolio-wrap">
-              <Image src="/for-your-interest.png" width= "416px" height="279px" className="img-fluid" alt=""/>
-              <div className="portfolio-links">
-                <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div className="portfolio-wrap">
-              <Image src="/for-your-interest.png" width= "416px" height="279px" className="img-fluid" alt=""/>
-              <div className="portfolio-links">
-                <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 2"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-app">
-            <div className="portfolio-wrap">
-              <Image src="/for-your-interest.png" width= "416px" height="279px" className="img-fluid" alt=""/>
-              <div className="portfolio-links">
-                <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="App 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div className="portfolio-wrap">
-              <Image src="/for-your-interest.png" width= "416px" height="279px" className="img-fluid" alt=""/>
-              <div className="portfolio-links">
-                <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 1"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-card">
-            <div className="portfolio-wrap">
-              <Image src="/for-your-interest.png" width= "416px" height="279px" className="img-fluid" alt=""/>
-              <div className="portfolio-links">
-                <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Card 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div className="col-lg-4 col-md-6 portfolio-item filter-web">
-            <div className="portfolio-wrap">
-              <Image src="/for-your-interest.png" width= "416px" height="279px" className="img-fluid" alt=""/>
-              <div className="portfolio-links">
-                <a href="/for-your-interest.png" data-gallery="portfolioGallery" className="portfolio-lightbox" title="Web 3"><i className="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" title="More Details"><i className="bx bx-link"></i></a>
-              </div>
-            </div>
-          </div>
+          
 
         </div>
 
@@ -260,8 +204,10 @@ export default function Home({sum,edu,JobList,contact, skillsList}) {
             </div>
 
             <div className="grid">
-              <div className="col-lg-6" >
-                {(skillsList.items.map( one =><p key={one.fields.skill} >{one.fields.skill}</p>))}
+              <div className="col-lg-6 resume resume-item">
+                <ul >
+                {(skillsList.items.map( one =><li key={one.fields.skill} >{one.fields.skill}</li>))}
+                </ul>
               </div>
             </div>
 

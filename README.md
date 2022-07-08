@@ -1,13 +1,14 @@
 Next.js App with iPortfolio - v3.7.0 for CSS
 
 Current Errors:
-1. dotenv not working
-2. skills list error
 3. Portfolio needs data
 4. mobile nav bar not working
 
 
-
+Fixed:
+1. dotenv not working -> Next.js has env built in
+2. skills list error  -> Switched maxs to mins and the grids worked
+5. Profile image -> Image caught in span using expiremental next.js 
 
 
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
