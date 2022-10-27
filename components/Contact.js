@@ -1,3 +1,4 @@
+import ContactForm from "./contactForm";
 
 export default function Contact ({contact}) {
     return(
@@ -6,7 +7,7 @@ export default function Contact ({contact}) {
 
         <div className="section-title">
           <h2>Contact</h2>
-          <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
+          <p>For work opportunities and pricing estimates please reach out through email or this contact form.</p>
         </div>
 
         <div className="row" >
@@ -35,7 +36,7 @@ export default function Contact ({contact}) {
             </div>
 
           </div>
-
+      <ContactForm />
   
 
         </div>
