@@ -5,7 +5,9 @@ export default async function handler(req, res) {
   dotenv.config();
 
   const transporter = nodemailer.createTransport({
-        service : process.env.EMAIL_SERVICE,
+      host: 'smtp.zoho.com',
+      port: 465,
+      secure: true, //ssl
         auth : {
             user : process.env.EMAIL_USERNAME,
             pass : process.env.EMAIL_PASSWORD
