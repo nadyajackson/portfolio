@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-export default function (req, res) {
+export default function API (req, res) {
   let nodemailer = require('nodemailer')
   dotenv.config();
 
