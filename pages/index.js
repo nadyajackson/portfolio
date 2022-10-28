@@ -1,7 +1,7 @@
 import {createClient} from 'contentful'
 import  '../node_modules/@fortawesome/fontawesome-svg-core/styles.css'
 import Profile from '../components/Profile'
-import NavBar from '../components/navbar'
+import NavBar from '../components/Navbar'
 import Hero from '../components/Hero'
 import About from '../components/About'
 import Contact from '../components/Contact'
