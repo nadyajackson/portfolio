@@ -1,6 +1,6 @@
 import dotenv from 'dotenv';
 
-export default function handler(req, res) {
+export default async function handler(req, res) {
   let nodemailer = require('nodemailer')
   dotenv.config();
 
@@ -11,19 +11,37 @@ export default function handler(req, res) {
             pass : process.env.EMAIL_PASSWORD
         }
     })
-
+    await new Promise((resolve, reject) => {
+      // verify connection configuration
+      transporter.verify(function (error, success) {
+          if (error) {
+              console.log(error);
+              reject(error);
+          } else {
+              console.log("Server is ready to take our messages");
+              resolve(success);
+          }
+      });
+  });
     const options = {
-      from: process.env.EMAIL_USERNAME,
+      from: `${process.env.EMAIL_USERNAME}`,
       to: 'nadyabethany@gmail.com',
       subject: `Message From ${req.body.name}`,
       text: `${req.body.message} | From ${req.body.name} ${req.body.email}`,
       html: `<div>${req.body.message} | From ${req.body.name} ${req.body.email}</div>`
     }
+    
+    await new Promise((resolve,reject) =>{
     transporter.sendMail(options, function (error, info){
-        if(error) 
+        if(error) {
           console.log(error)
-        else 
+          reject(err)
+        }
+        else {
           console.log(info)
+          resolve(info)
+        }
+    })
     })
     res.status(200).json({ message: 'ISubmitted' })
 }
