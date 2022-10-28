@@ -35,7 +35,7 @@ export default async function handler(req, res) {
     transporter.sendMail(options, function (error, info){
         if(error) {
           console.log(error)
-          reject(err)
+          reject(error)
         }
         else {
           console.log(info)
