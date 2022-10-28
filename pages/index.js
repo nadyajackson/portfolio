@@ -37,7 +37,6 @@ export async function getStaticProps() {
 function on (e) {
     document.body.classList.toggle('mobile-nav-active')
     
- 
 }
 
 

@@ -3,7 +3,7 @@ export default function ContactForm() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-    const [submitted, setSubmitted] = useState(false)
+    const [received, setRecieved] = useState("")
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log('Sending')
@@ -25,12 +25,13 @@ export default function ContactForm() {
             console.log('Response received')
             if (res.status === 200) {
               console.log('Response succeeded!')
-              setSubmitted(true)
-              setName('')
-              setEmail('')
-              setBody('')
+              setName("")
+              setEmail("")
+              setMessage("")
+              setRecieved('Message Recieved')
             }
           })
+          
         }    
       return (
         <div className="col-lg-7 mt-5 mt-lg-0 d-flex align-items-stretch">
@@ -54,6 +55,7 @@ export default function ContactForm() {
                 onChange={(e)=>{setMessage(e.target.value)}}></textarea>
               </div>
               
+                <p style={{backgroundColor: "#90EE90", color: "#ffffff", textAlign: "center"}}>{received}</p>
               <div className="text-center"><button type="submit" onClick={(e)=>{handleSubmit(e)}}>Send Message</button></div>
             </form>
           </div>

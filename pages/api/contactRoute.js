@@ -2,7 +2,6 @@ import dotenv from 'dotenv';
 
 export default function (req, res) {
   let nodemailer = require('nodemailer')
-  console.log(req.body.message)
   dotenv.config();
 
   const transporter = nodemailer.createTransport({
@@ -20,12 +19,13 @@ export default function (req, res) {
       text: `${req.body.message} | From ${req.body.name} ${req.body.email}`,
       html: `<div>${req.body.message} | From ${req.body.name} ${req.body.email}</div>`
     }
-
-    transporter.sendMail(options, (error, info) =>{
-        if(error) console.log(error)
-        else console.log(info)
+    transporter.sendMail(options, function (error, info){
+        if(error) 
+          console.log(error)
+        else 
+          console.log(info)
     })
-  res.status(200)
+    res.status(200).json({ message: 'ISubmitted' })
 }
 
 
