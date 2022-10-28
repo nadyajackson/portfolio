@@ -6,7 +6,7 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Resume from '../components/Resume'
-import Portfolio from '../components/Portfolio'
+// import Portfolio from '../components/Portfolio'
 import Skills from '../components/Skills'
 
 
