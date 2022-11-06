@@ -7,6 +7,7 @@ import About from '../components/About'
 import Contact from '../components/Contact'
 import Resume from '../components/Resume'
 // import Portfolio from '../components/Portfolio'
+import Head from 'next/head'
 import Skills from '../components/Skills'
 
 
@@ -44,6 +45,11 @@ export default function Home({sum,edu,JobList,contact, skillsList}) {
   
   return (
     <div>
+      <Head>
+      <title>N.B.Jackson&#39;s Portfolio</title>
+      <link rel='preload' href="../public/Jackson-20.jpg" as="image"/>
+      <link rel="icon" href="njsknickknack.png"/>
+      </Head>
       <i className="bi bi-list mobile-nav-toggle d-xl-none HamMenu" onClick={on}></i>
       
       <header id="header">
