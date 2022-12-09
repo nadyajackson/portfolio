@@ -1,22 +1,19 @@
-import React, { useContext } from "react";
+import React from "react";
 import Image from 'next/image'
-import {PageContext} from '../pages/paginationContext';
 
-function Portfolio() {
-  const {page} = useContext(PageContext)
+function Portfolio({display}) {
+ 
   return (
-    <div>
-        <h1>Title</h1>
-      {console.log(page)}
-        <Image src="/smirk.jpg"  layout='raw' width= "100%" height="100%" 
-            alt="picture of nadya jackson holding a stack of books"
-            className="pImg img-fluid rounded-circle"/>
-        <div>
-            <h3>Info</h3>
-            <p>Program :</p>
-            <p>Database :</p>
-            <p></p>
+    <div className="col-lg-4 col-md-6 portfolio-item filter-app">
+    
+            <div className="portfolio-wrap">
+              <Image src= {`https:`+ display.fields.image.fields.file.url} width= "416px" height="279px" className="img-fluid" alt=""/>
+              <div className="portfolio-links">
+                <a href={display.fields.url} data-gallery="portfolioGallery" className="portfolio-lightbox" title={display.fields.title}><i className="bx bx-plus"></i></a>
+                {/* <button title="More Details" onClick={()=>handlePage(display.fields)}><i className="bx bx-link"></i></button> */}
+              </div>
         </div>
+
     </div>
   )
 }
