@@ -1,4 +1,4 @@
-import Portfolio from "../pages/Portfolio";
+import Portfolio from "../pages/portfolio";
 import React from "react";
 // import {PageContext} from '../pages/paginationContext';
 
