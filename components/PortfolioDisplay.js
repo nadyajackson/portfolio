@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import React, { useContext } from "react";
+import React from "react";
 // import {PageContext} from '../pages/paginationContext';
 
 export default function PortfolioDisplay ({portfolio}) {
@@ -32,6 +32,7 @@ export default function PortfolioDisplay ({portfolio}) {
 
         <div className="row portfolio-container" >
           {portfolio.items.map(display =>
+          key=display.fields.title,
           <div className="col-lg-4 col-md-6 portfolio-item filter-app">
             <div className="portfolio-wrap">
               <Image src= {`https:`+ display.fields.image.fields.file.url} width= "416px" height="279px" className="img-fluid" alt=""/>
