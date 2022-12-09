@@ -6,7 +6,7 @@ import Hero from '../components/Hero'
 import About from '../components/About'
 import Contact from '../components/Contact'
 import Resume from '../components/Resume'
-// import Portfolio from '../components/Portfolio'
+import PortfolioDisplay from '../components/PortfolioDisplay'
 import Head from 'next/head'
 import Skills from '../components/Skills'
 
@@ -41,8 +41,7 @@ function on (e) {
 }
 
 
-export default function Home({sum,edu,JobList,contact, skillsList}) {
-  
+export default function Home({sum,edu,JobList,contact, skillsList, portfolio}) {
   return (
     <div>
       <Head>
@@ -65,7 +64,7 @@ export default function Home({sum,edu,JobList,contact, skillsList}) {
       <main id="main">
         <About sum={sum}/>
         <Resume contact={contact} JobList={JobList} edu={edu}/>
-        {/* <Portfolio/> */}
+        <PortfolioDisplay portfolio={portfolio}/>
         <Skills skillsList={skillsList}/>
         <Contact contact={contact}/>
       </main>
