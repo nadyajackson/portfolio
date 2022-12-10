@@ -15,7 +15,7 @@ export default function PortfolioDisplay ({portfolio}) {
       <div className="container">
 
         <div className="section-title">
-          <h2>Portfolio</h2>
+          <h2>Projects</h2>
           {/* <p>Click a project below to access more information!</p> */}
         </div>
 

@@ -63,9 +63,9 @@ export default function Home({sum,edu,JobList,contact, skillsList, portfolio}) {
 
       <main id="main">
         <About sum={sum}/>
+        <Skills skillsList={skillsList}/>
         <Resume contact={contact} JobList={JobList} edu={edu}/>
         <PortfolioDisplay portfolio={portfolio}/>
-        <Skills skillsList={skillsList}/>
         <Contact contact={contact}/>
       </main>
 

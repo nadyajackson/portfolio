@@ -9,7 +9,7 @@ export default function Resume ({contact, JobList, edu}) {
 
           <div className="row">
             <div className="col-lg-6">
-              <h3 className="resume-title">Summary</h3>
+              <h3 className="resume-title">Contact</h3>
               <div className="resume-item pb-0">
                 <h4>{contact.items[0].fields.name}</h4>
                 <ul>
