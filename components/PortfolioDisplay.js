@@ -11,7 +11,7 @@ export default function PortfolioDisplay ({portfolio}) {
   // }
 
     return(
-        <section id="portfolio" className="portfolio">
+        <section id="portfolio" className="portfolio section-bg">
       <div className="container">
 
         <div className="section-title">

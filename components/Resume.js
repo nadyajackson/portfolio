@@ -1,6 +1,6 @@
 export default function Resume ({contact, JobList, edu}) {
     return(
-        <section id="resume" className="resume section-bg"> 
+        <section id="resume" className="resume"> 
         <div className="container">
 
           <div className="section-title">
