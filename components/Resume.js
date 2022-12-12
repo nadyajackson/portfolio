@@ -4,7 +4,7 @@ export default function Resume ({contact, JobList, edu}) {
         <div className="container">
 
           <div className="section-title">
-            <h2>Resume</h2>
+        
           </div>
 
           <div className="row">
