@@ -1,6 +1,6 @@
 export default function NavBar () {
   function on (e) {
-    document.body.classList.toggle('mobile-nav-active')
+    document.body.classList.remove('mobile-nav-active')
     console.log(e)
 }
     return(

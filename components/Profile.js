@@ -4,7 +4,7 @@ import Image from 'next/image'
 
 export default function Profile () {
   function on (e) {
-    document.body.classList.toggle('mobile-nav-active')
+    document.body.classList.remove('mobile-nav-active')
     console.log(e)
 }
 
