@@ -1,6 +1,6 @@
 export default function Skills ({skillsList}) {
     return(
-        <section id="skills" className="skills section-bg">
+        <section id="skills" className="skills">
         <div className="container">
 
           <div className="section-title">

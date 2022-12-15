@@ -9,7 +9,8 @@ function Portfolio({display}) {
       {console.log(display)}
             <h4>{display.fields.title}</h4>
             <ul>
-              <li>Database: {display.fields.database}</li>
+            {display.fields.database ? <li>Database: {display.fields.database}</li> :  <p display="none"></p>}
+
               <li>Github: <Link href={display.fields.githubUrl}>Click Here</Link></li>
               <li>Hosting: {display.fields.hosting}</li>
               <li>Other Features: {display.fields.otherFeatures}</li>
