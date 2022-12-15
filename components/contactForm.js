@@ -3,7 +3,7 @@ export default function ContactForm() {
     const [name, setName] = useState("");
     const [email, setEmail] = useState("");
     const [message, setMessage] = useState("");
-    const [received, setRecieved] = useState("")
+    const [received, setReceived] = useState("")
     const handleSubmit = async (e) => {
         e.preventDefault()
         console.log('Sending')
@@ -28,7 +28,7 @@ export default function ContactForm() {
               setName("")
               setEmail("")
               setMessage("")
-              setRecieved('Message Recieved')
+              setReceived('Message Received')
             }
           })
           

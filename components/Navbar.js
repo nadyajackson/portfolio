@@ -1,6 +1,10 @@
 export default function NavBar () {
+  function on (e) {
+    document.body.classList.toggle('mobile-nav-active')
+    console.log(e)
+}
     return(
-        <nav id="navbar" className="nav-menu navbar">
+        <nav id="navbar" className="nav-menu navbar" onClick={on}>
             <ul>
               <li><a href="#hero" className="nav-link scrollto active"><i className="bx bx-home"></i> <span>Home</span></a></li>
               <li><a href="#about" className="nav-link scrollto"><i className="bx bx-user"></i> <span>About</span></a></li>
